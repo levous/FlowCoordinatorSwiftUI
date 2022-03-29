@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB32DA2C27F368E300975607 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB32DA2B27F368E300975607 /* HomeView.swift */; };
 		FB5D615D27DC2BC2007C9FD3 /* FlowCoordinatorSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5D615C27DC2BC2007C9FD3 /* FlowCoordinatorSwiftUIApp.swift */; };
 		FB5D615F27DC2BC2007C9FD3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5D615E27DC2BC2007C9FD3 /* MainView.swift */; };
 		FB5D616127DC2BC7007C9FD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB5D616027DC2BC7007C9FD3 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB32DA2B27F368E300975607 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FB5D615927DC2BC2007C9FD3 /* FlowCoordinatorSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowCoordinatorSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB5D615C27DC2BC2007C9FD3 /* FlowCoordinatorSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorSwiftUIApp.swift; sourceTree = "<group>"; };
 		FB5D615E27DC2BC2007C9FD3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				FB5D615E27DC2BC2007C9FD3 /* MainView.swift */,
 				FB5EC4AD27DD2B2700D27D5D /* ProfileListView.swift */,
 				FB5EC4AF27DD313A00D27D5D /* ProfileView.swift */,
+				FB32DA2B27F368E300975607 /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB32DA2C27F368E300975607 /* HomeView.swift in Sources */,
 				FB5EC4B027DD313A00D27D5D /* ProfileView.swift in Sources */,
 				FB5EC4A727DD208700D27D5D /* PreviewState.swift in Sources */,
 				FB5EC4A527DD1E3600D27D5D /* AppFlowCoordinator.swift in Sources */,

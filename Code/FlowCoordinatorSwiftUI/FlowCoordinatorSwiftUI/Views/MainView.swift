@@ -31,8 +31,7 @@ struct MainView: View {
         }
         .foregroundColor(.blue)
         .alert(isPresented: showErrorBinding) {
-            //Alert(title: appState.errorAlert?.title, message: Text(appState.errorAlert?.message), dismissButton: .default(Text("OK")))
-            Alert(title: Text("This"), message: Text("That"), dismissButton: .default(Text("OK")))
+            errorAlert
         }
     }
 
@@ -44,46 +43,14 @@ struct MainView: View {
                 }
         }
     }
-}
 
-struct HomeView: View {
-
-    @EnvironmentObject private var appState: AppState
-    private let appFlowCoordinator = AppFlowCoordinator.sharedInstance
-
-    var body: some View {
-        VStack(spacing: 20) {
-            Text("Home View").padding(.bottom, 60)
-
-            Button("Show Profile 1") {
-                appFlowCoordinator.presentProfile(profileID: "1")
-            }
-
-            Button("Show Profile 2") {
-                appFlowCoordinator.presentProfile(profileID: "2")
-            }
-
-            Button("Update State") {
-
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-                    self.appState.routing.selectedTab = .profile
-                    self.appFlowCoordinator.presentProfile(profileID: "1")
-                }
-
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4)) {
-                    self.appFlowCoordinator.presentProfile(profileID: "2")
-                }
-
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(6)) {
-                    self.appFlowCoordinator.presentProfile(profileID: "1")
-                }
-
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(8)) {
-                    self.appState.routing.selectedTab = .home
-                }
-            }
+    private var errorAlert: Alert {
+        if let title = appState.userAlert?.title,
+           let message = appState.userAlert?.message {
+            return Alert(title: Text(title), message: Text(message), dismissButton: .default(Text("OK")))
+        } else {
+            return Alert(title: Text("Uh oh"), message: Text("Something went wrong but I couldn't find the details"), dismissButton: .default(Text("OK")))
         }
-        .buttonStyle(BorderedButtonStyle()).tint(.blue)
     }
 }
 
