@@ -93,6 +93,24 @@ import UIKit
         profileFlowCoordinator.presentProfile(profileID: profileID)
     }
 
+    func jeuleeDoTheThing() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+            self.presentProfile(profileID: "1")
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4)) {
+            self.presentProfile(profileID: "2")
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(6)) {
+            self.presentProfile(profileID: "1")
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(8)) {
+            self.selectTab(.home)
+        }
+    }
+
     // MARK: - View Controller Configuration
 
     private func configureTabBarController() -> UIViewController {
@@ -140,22 +158,7 @@ extension AppFlowCoordinator: HomeViewControllerDelegate {
     }
 
     func homeViewControllerUpdateStateButtonButtonTapped() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-            self.appState.routing.selectedTab = .profile
-            self.appState.routing.selectedProfileID = "1"
-        }
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4)) {
-            self.appState.routing.selectedProfileID = "2"
-        }
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(6)) {
-            self.appState.routing.selectedProfileID = "1"
-        }
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(8)) {
-            self.appState.routing.selectedTab = .home
-        }
+        jeuleeDoTheThing()
     }
 }
 

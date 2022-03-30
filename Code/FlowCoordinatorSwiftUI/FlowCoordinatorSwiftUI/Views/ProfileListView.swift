@@ -40,7 +40,7 @@ struct ProfileListView: View {
     var body: some View {
         List(viewModel.profiles) { profile in
             NavigationLink(
-                tag: profile.profileID,
+                tag: profile.id,
                 selection: $appState.routing.selectedProfileID,
                 destination: { ProfileView(profile: profile) }
             ) {

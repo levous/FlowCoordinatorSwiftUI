@@ -27,22 +27,7 @@ struct HomeView: View {
 
             Button("Update State") {
 
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-                    self.appState.routing.selectedTab = .profile
-                    self.appFlowCoordinator.presentProfile(profileID: "1")
-                }
-
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4)) {
-                    self.appFlowCoordinator.presentProfile(profileID: "2")
-                }
-
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(6)) {
-                    self.appFlowCoordinator.presentProfile(profileID: "1")
-                }
-
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(8)) {
-                    self.appState.routing.selectedTab = .home
-                }
+                appFlowCoordinator.jeuleeDoTheThing()
             }
         }
         .buttonStyle(BorderedButtonStyle()).tint(.blue)

@@ -1,7 +1,7 @@
 import XCTest
 @testable import FlowCoordinatorShared
 
-final class AppStateUserPersistenceTests: XCTestCase {
+final class AppStateUserDefaultsPersistenceTests: XCTestCase {
 
     override func setUp() {
         clearUserDefaults()
@@ -13,7 +13,7 @@ final class AppStateUserPersistenceTests: XCTestCase {
         UserDefaults.standard.synchronize()
     }
 
-    func testRouting() throws {
+    func testRoutingPersists() throws {
         let appState = AppState()
         XCTAssertEqual(Tab.home, appState.routing.selectedTab)
         XCTAssertNil(appState.routing.selectedProfileID)
